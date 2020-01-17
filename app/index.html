@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO test</title>
+    <style>
+      
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      $(function () {
+        var socket = io();
+        socket.on('news', function(msg) {
+
+          $('#messages').append($('<li>').text(msg.text));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+  </body>
+</html>
